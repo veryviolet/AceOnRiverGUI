@@ -4,8 +4,8 @@ from mock import patch
 
 from tests.base_unittest import BaseUnitTest
 
-from pypokergui.server.game_manager import GameManager
-import pypokergui.server.message_manager as MM
+from aceonrivergui.server.game_manager import GameManager
+import aceonrivergui.server.message_manager as MM
 
 class MessageManagerTest(BaseUnitTest):
 
@@ -13,7 +13,7 @@ class MessageManagerTest(BaseUnitTest):
         uuids = ["hoge", "fuga"]
         sockets = [gen_mock_socket(uuid) for uuid in uuids]
         with patch(
-                'pypokergui.server.message_manager._gen_config_update_message',
+                'aceonrivergui.server.message_manager._gen_config_update_message',
                 side_effect=lambda x, y, uuid: "config_update:%s" % uuid):
             MM.broadcast_config_update("handler", GameManager(), sockets)
         for soc, uuid in zip(sockets, uuids):
@@ -25,7 +25,7 @@ class MessageManagerTest(BaseUnitTest):
         sockets = [gen_mock_socket(uuid) for uuid in uuids]
         gm = setup_game_manager(uuids)
         with patch(
-                'pypokergui.server.message_manager._gen_start_game_message',
+                'aceonrivergui.server.message_manager._gen_start_game_message',
                 side_effect=lambda x, y, uuid: "start_game:%s" % uuid):
             MM.broadcast_start_game("handler", gm, sockets)
         for soc, uuid in zip(sockets, uuids):
@@ -46,10 +46,10 @@ class MessageManagerTest(BaseUnitTest):
         list(gm.ai_players.values())[0].debug_message = None
         gm.update_game("fold", 0)
         with patch(
-                'pypokergui.server.message_manager._gen_game_update_message',
+                'aceonrivergui.server.message_manager._gen_game_update_message',
                 return_value="update_game"),\
             patch(
-                'pypokergui.server.message_manager._broadcast_message_to_ai',
+                'aceonrivergui.server.message_manager._broadcast_message_to_ai',
                 side_effect=self._append_log_on_player):
             MM.broadcast_update_game("handler", gm, sockets, mode="dev")
         for soc, uuid in zip(sockets, uuids):

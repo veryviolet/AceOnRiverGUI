@@ -5,15 +5,15 @@ import sys
 
 # Resolve path configuration
 root = os.path.join(os.path.dirname(__file__), "..")
-src = os.path.join(root, "pypokergui")
+src = os.path.join(root, "aceonrivergui")
 sys.path.append(root)
 sys.path.append(src)
 
 import click
 import webbrowser
 
-from pypokergui.server.poker import start_server
-from pypokergui.config_builder import build_config
+from aceonrivergui.server.poker import start_server
+from aceonrivergui.config_builder import build_config
 
 @click.group()
 def cli():

@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 
 setup(
-    name = 'PyPokerGUI',
-    version = '0.0.7',
-    author = 'ishikota',
-    author_email = 'ishikota086@gmail.com',
-    description = 'GUI application for PyPokerEngine',
+    name = 'AceOnRiverGUI',
+    version = '0.0.1',
+    author = 'veryviolet',
+    author_email = 'veryviolet@zoho.com',
+    description = 'GUI application for AceOnRiver',
     license = 'MIT',
     keywords = 'python poker engine gui',
-    url = 'https://github.com/ishikota/PyPokerGUI',
+    url = 'https://github.com/veryviolet/AceOnRiver',
     packages = [pkg for pkg in find_packages() if pkg != "tests"],
     package_data={
-        'pypokergui': [
+        'aceonrivergui': [
             'server/static/*.css',
             'server/static/*.js',
             'server/static/images/*',
@@ -29,7 +29,7 @@ setup(
         'PyYAML==3.12',
     ],
     entry_points={
-        'console_scripts': ['pypokergui=pypokergui.__main__:cli']
+        'console_scripts': ['aceonrivergui=aceonrivergui.__main__:cli']
     },
     )
 

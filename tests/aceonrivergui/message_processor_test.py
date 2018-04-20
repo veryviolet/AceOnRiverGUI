@@ -2,7 +2,7 @@ from pypokerengine.engine.card import Card
 from pypokerengine.engine.deck import Deck
 from tests.base_unittest import BaseUnitTest
 
-import pypokergui.engine_wrapper as Engine
+import aceonrivergui.engine_wrapper as Engine
 
 class EngineWrapperTest(BaseUnitTest):
 

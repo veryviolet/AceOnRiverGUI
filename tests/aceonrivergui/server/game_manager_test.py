@@ -1,9 +1,9 @@
 import os
 
 from tests.base_unittest import BaseUnitTest
-from tests.pypokergui.server.sample_ai_setup_script import FishPlayer
+from tests.aceonrivergui.server.sample_ai_setup_script import FishPlayer
 
-from pypokergui.server.game_manager import GameManager
+from aceonrivergui.server.game_manager import GameManager
 
 class GameManagerTest(BaseUnitTest):
 

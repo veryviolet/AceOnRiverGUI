@@ -9,7 +9,7 @@ except ImportError:
 
 import yaml
 
-from pypokergui.config_builder import build_config
+from aceonrivergui.config_builder import build_config
 
 class ConfigBuilderTest(BaseUnitTest):
 
